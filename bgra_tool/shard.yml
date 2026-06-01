@@ -1,0 +1,14 @@
+name: bgra_tool
+version: 1.0.0
+
+targets:
+  bgra_tool:
+    main: src/bgra_tool.cr
+
+dependencies:
+  stumpy_png:
+    github: stumpycr/stumpy_png
+
+crystal: ">= 1.0.0"
+license: MIT
+
