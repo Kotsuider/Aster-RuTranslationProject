@@ -12,7 +12,6 @@
 - [ ] Полный перевод
 - [ ] Редактура
 
-Таблица с прогрессом перевода обязательно когда-то будет...
 [Таблица с переводом](https://docs.google.com/spreadsheets/d/1OwNxSBqtfSx_dSwn6DjITNLY31HOFFt1/edit?usp=sharing&ouid=103224880279791937700&rtpof=true&sd=true)
 
 ## Установка
