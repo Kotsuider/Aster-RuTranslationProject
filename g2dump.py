@@ -55,7 +55,7 @@ for _l, _c in _RU_F_LOWER.items(): _CYR_TO_LATIN[_c] = _l
 _CYR_SPECIAL = {
     'Ъ': '[', 'Ь': ']', 'ё': '`', 'э': '{', 'ы': '|', 'я': '}',
     'Ы': '\xa1', 'ь': '&', 'ъ': '+', 'Ю': '-', 'ю': '$',
-    '—': '#', 'Я': '>', 'Ё': '<', 'Э': '=', 'Й': 'J', 'й': 'j',
+    '—': '#', 'Я': '>', 'Ё': '<', 'Э': '=', 'Й': 'J', 'й': 'j', '…': '...', '«': '"', '»': '"', '-': '#', 
 }
 _FULL_TABLE = {}
 _FULL_TABLE.update(_CYR_TO_LATIN)
@@ -114,7 +114,7 @@ def get_translatable_rows(lines):
 
 # Перенос строк (wrap)
 
-WRAP_LIMIT  = 48
+WRAP_LIMIT  = 46
 WRAP_HYPHEN = '#'   
 _HAS_CYRILLIC = re.compile(r'[\u0430-\u044f\u0451\u0410-\u042f\u0401]')
 
@@ -272,7 +272,7 @@ def cmd_dump_xlsx(args):
         sheet_name = g2_path.stem[:31]
         ws = wb.create_sheet(title=sheet_name)
 
-        headers = ['Row', 'Original JP', 'TL (RU)', 'Max bytes']
+        headers = ['Row', 'Original JP', 'TL (RU)']
         for col, h in enumerate(headers, 1):
             cell = ws.cell(row=1, column=col, value=h)
             cell.font      = hdr_font
@@ -282,7 +282,6 @@ def cmd_dump_xlsx(args):
         ws.column_dimensions['A'].width = 8
         ws.column_dimensions['B'].width = 50
         ws.column_dimensions['C'].width = 50
-        ws.column_dimensions['D'].width = 10
         ws.row_dimensions[1].height = 20
 
         for xls_row, s in enumerate(rows, 2):
@@ -291,9 +290,8 @@ def cmd_dump_xlsx(args):
             c_orig.fill      = orig_fill
             c_orig.alignment = wrap_al
             ws.cell(row=xls_row, column=3, value='').alignment = wrap_al
-            ws.cell(row=xls_row, column=4, value=s['byte_len']).alignment = center
 
-        ws.auto_filter.ref = f"A1:D{len(rows)+1}"
+        ws.auto_filter.ref = f"A1:C{len(rows)+1}"
         ws.freeze_panes    = 'A2'
 
         total += len(rows)

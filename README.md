@@ -6,11 +6,13 @@
 ## Статус
 
 **Progress:**
-`[██░░░░░░░░░░░░░░░░░] 10%`
+`[██████████░░░░░░░░░] 55%`
 
+- [x] Полный перевод
 - [ ] Перевод графики
-- [ ] Полный перевод
 - [ ] Редактура
+
+В данный момент времени строки в самой вн могут выглядеть весьма специфично (перенос посреди предложения), ибо сами строки в оригинале так разбиты. Будет правиться с редактурой. 
 
 [Таблица с переводом](https://docs.google.com/spreadsheets/d/1OwNxSBqtfSx_dSwn6DjITNLY31HOFFt1/edit?usp=sharing&ouid=103224880279791937700&rtpof=true&sd=true)
 
@@ -31,16 +33,7 @@
 G2CryptTool.exe dump ORIG ORIG_STR
 ```
 
-Скачиваем таблицу с переводом и используем g2dump.py
-
-```Python
-py -3.12 g2dump.py from-xlsx ORIG_STR aster.xlsx Translated
-```
-
-Далее опять G2CryptTool
-```
-G2CryptTool.exe inject ORIG Translated script.pak
-```
+Скачиваем таблицу с переводом и запускаем `create_inject.bat`
 
 ### Графика 
 Для редактирования графики используется bgra_tool.exe.
