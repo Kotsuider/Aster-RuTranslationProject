@@ -251,7 +251,7 @@ static PFN_SFP Real_SFP=NULL;
 /* Таблица замены символов при рендеринге:
  * Движок передаёт ASCII символ -> мы возвращаем глиф из Unicode
  * ><+-=# -> ÓÕ¹²×É (специальные глифы шрифта YasuSakuuta) */
-static const char    g_src_chars[] = "><+-=#^";
+static const char    g_src_chars[] = "><+%=#^";
 static const WCHAR   g_dst_chars[] = {0x00D3, 0x00D5, 0x00B9, 0x00B2, 0x00D7, 0x00C9, 0x00C9, 0};
 /* О   Õ       ¹       ²       ×       É */
 

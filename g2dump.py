@@ -54,8 +54,8 @@ for _l, _c in _RU_F_UPPER.items(): _CYR_TO_LATIN[_c] = _l
 for _l, _c in _RU_F_LOWER.items(): _CYR_TO_LATIN[_c] = _l
 _CYR_SPECIAL = {
     'Ъ': '[', 'Ь': ']', 'ё': '`', 'э': '{', 'ы': '|', 'я': '}',
-    'Ы': '\xa1', 'ь': '&', 'ъ': '+', 'Ю': '-', 'ю': '$',
-    '—': '#', 'Я': '>', 'Ё': '<', 'Э': '=', 'Й': 'J', 'й': 'j', '…': '...', '«': '"', '»': '"', '-': '#', 
+    'Ы': '\xa1', 'ь': '&', 'ъ': '+', 'Ю': '%', 'ю': '$',
+    '—': '#', 'Я': '>', 'Ё': '<', 'Э': '=', 'Й': 'J', 'й': 'j', '…': '...', '«': '"', '»': '"', 
 }
 _FULL_TABLE = {}
 _FULL_TABLE.update(_CYR_TO_LATIN)
@@ -114,7 +114,7 @@ def get_translatable_rows(lines):
 
 # Перенос строк (wrap)
 
-WRAP_LIMIT  = 46
+WRAP_LIMIT  = 45
 WRAP_HYPHEN = '#'   
 _HAS_CYRILLIC = re.compile(r'[\u0430-\u044f\u0451\u0410-\u042f\u0401]')
 
