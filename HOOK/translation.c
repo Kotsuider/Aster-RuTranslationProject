@@ -251,8 +251,8 @@ static PFN_SFP Real_SFP=NULL;
 /* Таблица замены символов при рендеринге:
  * Движок передаёт ASCII символ -> мы возвращаем глиф из Unicode
  * ><+-=# -> ÓÕ¹²×É (специальные глифы шрифта YasuSakuuta) */
-static const char    g_src_chars[] = "><+%=#^";
-static const WCHAR   g_dst_chars[] = {0x00D3, 0x00D5, 0x00B9, 0x00B2, 0x00D7, 0x00C9, 0x00C9, 0};
+static const char    g_src_chars[] = "><+%#^";
+static const WCHAR   g_dst_chars[] = {0x00D3, 0x00D5, 0x00B9, 0x00B2, 0x00C9, 0x00C9, 0};
 /* О   Õ       ¹       ²       ×       É */
 
 DWORD WINAPI Hook_GetGlyphOutlineA(HDC hdc, UINT uChar, UINT fuFormat,
@@ -289,7 +289,7 @@ call_orig:
 }
 
 #define FONT_ORIG  "\x82\x6c\x82\x72\x20\x83\x53\x83\x56\x83\x62\x83\x4e"  /* ＭＳ ゴシック CP932 */
-#define FONT_NEW   "YasuSakuuta"
+#define FONT_NEW   "OUCTSfontD1"
 
 HFONT WINAPI Hook_CreateFontA(int h,int w,int e,int o,int fw,DWORD i,DWORD u,DWORD so,
     DWORD cs,DWORD op,DWORD cp,DWORD q,DWORD pf,LPCSTR face)
